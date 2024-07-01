@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Todo Form</title>
+
+<style type="text/css">
+	
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		margin: 0;
+		font-family: arial, sans-serif;
+		background-color: #f4f4f4;
+	}
+	
+	.todo-form {
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		width: 400px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	}
+	
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	label {
+		margin-bottom : 5px;
+		font-weight: bold;
+	}
+	
+	input[type = "text"] {
+		margin-bottom: 15px;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		
+	}
+	
+	button {
+		padding: 10px;
+		background-color: #28a745;
+		color: white;
+		border: none;
+		cursor: pointer;
+		border-radius: 4px;
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<!-- form 태그에서 데이터를 서버로 제출할 때 반드시 name 속성이 있어야 한다. -->
+	<div class="todo-form">
+		<h2>ADD Todo</h2>
+		<p>http://localhost:8080/s02/todo-add.html</p>
+		<!--  절대 경로 -->
+		<!--  /부터 시작한다면 절대 경로를 의미하고 context-root 부터 시작이다. -->
+		<!--  http://내IP:포트번호/Context-root//todo-insert -->
+		
+		<!--  상대 경로 -->
+		<!--   -->
+		<!-- http://localhost:8080/s02/todo-add.html -->
+		<form action="/s02/todo-insert" method="post">
+			<label for="title">Title : </label>
+			<input type="text" id="title" placeholder="Enter todo title" name="title" value = "코딩하기"> 
+			<label for = "description">Description: </label> 
+			<input type="text" id="description" placeholder="Enter todo title" name="description" value="html 연습"> 
+			<button type="submit">save</button>
+		</form>
+	</div>
+
+</body>
+</html>
